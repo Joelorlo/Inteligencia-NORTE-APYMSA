@@ -275,8 +275,94 @@
 /* V8.8 · Fuente estricta del catálogo:
    precio = Productos.precio_solicitado
    nombre promo = Productos.comentario */
+
+/* V20.0 · Tarjetas de calendario operativo por jerarquía */
+.hierarchy-days-grid{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:8px!important;
+  margin-top:14px!important;
+}
+.hierarchy-day-card{
+  min-width:0!important;
+  min-height:66px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:9px 6px!important;
+  border-radius:11px!important;
+  text-align:center!important;
+  background:#f7fbfc!important;
+  border:1px solid #9fbac5!important;
+}
+.hierarchy-day-card small{
+  display:block!important;
+  color:#587184!important;
+  -webkit-text-fill-color:#587184!important;
+  font-size:7px!important;
+  line-height:1.15!important;
+  font-weight:900!important;
+  text-transform:uppercase!important;
+  white-space:normal!important;
+}
+.hierarchy-day-card b{
+  display:block!important;
+  margin-top:6px!important;
+  font-size:20px!important;
+  line-height:1!important;
+  font-weight:900!important;
+  font-variant-numeric:tabular-nums!important;
+}
+.hierarchy-day-elapsed{border-color:#55b9c5!important;background:#e8f7f9!important}
+.hierarchy-day-elapsed b{color:#087f8c!important;-webkit-text-fill-color:#087f8c!important}
+.hierarchy-day-effective{border-color:#62b88f!important;background:#eaf8f1!important}
+.hierarchy-day-effective b{color:#087a4f!important;-webkit-text-fill-color:#087a4f!important}
+.hierarchy-day-remaining{border-color:#e2ab55!important;background:#fff5df!important}
+.hierarchy-day-remaining b{color:#a45f00!important;-webkit-text-fill-color:#a45f00!important}
+@media(max-width:460px){.hierarchy-days-grid{grid-template-columns:1fr!important}}
 </style><style id="apymsa-layout-simetrico-v1">
 header>div.max-w-7xl{max-width:1600px!important;width:100%!important;display:grid!important;grid-template-columns:minmax(280px,1fr) minmax(560px,2fr)!important;gap:18px!important;align-items:center!important}header>div.max-w-7xl>div:last-child{display:grid!important;grid-template-columns:repeat(5,minmax(145px,1fr))!important;gap:12px!important;width:100%!important}header>div.max-w-7xl>div:last-child>button{width:100%!important;min-height:48px!important;justify-content:center!important;text-align:center!important;padding:10px 14px!important;white-space:nowrap!important}#client-view .mb-8.border-b>div:first-child{align-items:stretch!important}#client-view .mb-8.border-b>div:first-child>div:last-child{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:12px!important;width:100%!important;max-width:980px!important;margin-left:auto!important}#client-view .mb-8.border-b>div:first-child>div:last-child button{width:100%!important;min-width:0!important;min-height:62px!important;padding:10px 12px!important;white-space:normal!important;line-height:1.15!important}@media(max-width:1200px){header>div.max-w-7xl{grid-template-columns:1fr!important}header>div.max-w-7xl>div:last-child{grid-template-columns:repeat(3,minmax(150px,1fr))!important}#client-view .mb-8.border-b>div:first-child{flex-direction:column!important;align-items:stretch!important}#client-view .mb-8.border-b>div:first-child>div:last-child{max-width:none!important;margin:0!important}}@media(max-width:760px){header>div.max-w-7xl>div:last-child{grid-template-columns:repeat(2,minmax(0,1fr))!important}header>div.max-w-7xl>div:last-child>button{min-height:46px!important;white-space:normal!important}#client-view .mb-8.border-b>div:first-child>div:last-child{grid-template-columns:repeat(2,minmax(0,1fr))!important}}@media(max-width:460px){header>div.max-w-7xl>div:last-child,#client-view .mb-8.border-b>div:first-child>div:last-child{grid-template-columns:1fr!important}}
+</style>
+
+<style id="apymsa-tablet-first-v20-1">
+/* Diseño principal optimizado para tabletas: 768 px a 1366 px */
+@media (min-width:768px) and (max-width:1366px){
+  html{font-size:15px!important}
+  body{min-width:0!important;overflow-x:hidden!important}
+  header{padding:12px 16px!important}
+  header>div.max-w-7xl{max-width:1180px!important;margin:0 auto!important;grid-template-columns:1fr!important;gap:12px!important}
+  header>div.max-w-7xl>div:first-child{min-width:0!important}
+  header>div.max-w-7xl>div:last-child{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:10px!important}
+  header>div.max-w-7xl>div:last-child>button{min-width:0!important;min-height:52px!important;padding:9px 10px!important;white-space:normal!important;line-height:1.15!important}
+  main{width:100%!important;max-width:1180px!important;margin-left:auto!important;margin-right:auto!important;padding:18px 16px 32px!important}
+  #territorial-view,#territorial-dashboard,#regional-view,#advisor-view,#client-view{width:100%!important;max-width:none!important}
+  .operational-grid,#regional-cards,#advisor-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important}
+  #territorial-intel-kpis,#regional-intel-kpis,#advisor-intel-kpis,
+  #territorial-discipline-kpis,#regional-discipline-kpis,#advisor-discipline-kpis{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
+  .discipline-kpi-grid,.segment-chart-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .hierarchy-days-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important}
+  .hierarchy-day-card{min-height:72px!important;padding:10px 5px!important}
+  .hierarchy-day-card small{font-size:7px!important}
+  .hierarchy-day-card b{font-size:22px!important}
+  #client-view .mb-8.border-b>div:first-child{flex-direction:column!important;align-items:stretch!important;gap:14px!important}
+  #client-view .mb-8.border-b>div:first-child>div:last-child{grid-template-columns:repeat(4,minmax(0,1fr))!important;max-width:none!important;margin:0!important;gap:9px!important}
+  #client-view .mb-8.border-b>div:first-child>div:last-child button{min-height:58px!important;font-size:9px!important;padding:8px!important}
+  #client-list>div{grid-template-columns:minmax(0,1fr) auto!important;gap:14px!important;padding:16px!important}
+  button,a,input,select{touch-action:manipulation}
+  button{min-height:44px}
+  input,select{font-size:16px!important}
+}
+/* Tableta vertical */
+@media (min-width:768px) and (max-width:900px){
+  header>div.max-w-7xl>div:last-child{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  main{padding:16px 14px 28px!important}
+  .operational-grid,#regional-cards,#advisor-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  #territorial-intel-kpis,#regional-intel-kpis,#advisor-intel-kpis,
+  #territorial-discipline-kpis,#regional-discipline-kpis,#advisor-discipline-kpis{grid-template-columns:1fr!important}
+  #client-view .mb-8.border-b>div:first-child>div:last-child{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  #client-list>div{grid-template-columns:1fr!important}
+}
 </style>
 </head>
 <body>
@@ -288,7 +374,7 @@ header>div.max-w-7xl{max-width:1600px!important;width:100%!important;display:gri
 </div>
 <div>
 <h1 class="text-xl font-black italic tracking-tighter uppercase leading-none text-white">
-                    Inteligencia <span class="text-neon-cyan">Comercial V19.9</span>
+                    Inteligencia <span class="text-neon-cyan">Comercial V20.1</span>
 </h1>
 <p class="text-[9px] text-neon-cyan font-bold uppercase tracking-[0.2em] mt-1 opacity-80" id="header-date-text">
                     Calculando mes... • Radiografía comercial
@@ -329,7 +415,7 @@ header>div.max-w-7xl{max-width:1600px!important;width:100%!important;display:gri
 <div class="w-10 h-10 border-4 border-[#00f3ff]/20 border-t-[#00f3ff] rounded-full animate-spin mb-3"></div>
 <span class="text-xs font-bold text-neon-cyan uppercase tracking-widest animate-pulse" id="loader-text">Procesando Base de Datos Estructurada...</span>
 </div>
-<h2 class="text-3xl font-black text-white mb-2 tracking-tight">INTELIGENCIA COMERCIAL <span class="text-neon-cyan">V19.9</span></h2>
+<h2 class="text-3xl font-black text-white mb-2 tracking-tight">INTELIGENCIA COMERCIAL <span class="text-neon-cyan">V20.1</span></h2>
 <p class="text-slate-400 mb-8 text-sm font-medium">Selecciona cualquier archivo desde Android o computadora. La aplicación validará internamente que sea GZIP.</p>
 <div class="flex flex-col md:flex-row gap-4 justify-center relative z-10">
 <button class="bg-gradient-to-r from-[#ff004c] to-[#cc003d] text-white px-8 py-3.5 rounded-full text-[11px] font-black uppercase tracking-widest shadow-lg hover:scale-105 transition-transform" id="btnSelectFile" type="button">Archivo Local (JSON.GZ)</button>
@@ -734,6 +820,21 @@ header>div.max-w-7xl{max-width:1600px!important;width:100%!important;display:gri
 
     const DIAS_EFECTIVOS_MES = obtenerDiasEfectivosDelMes(CURRENT_YEAR, CURRENT_MONTH); 
     const DIAS_TRANSCURRIDOS = calcularDiasTranscurridos();
+    function formatOperationalDays(value) {
+        const n = Number(value || 0);
+        return Number.isInteger(n) ? String(n) : n.toFixed(1);
+    }
+    function hierarchyDaysCards() {
+        const transcurridos = Math.max(Number(DIAS_TRANSCURRIDOS || 0), 0);
+        const efectivos = Math.max(Number(DIAS_EFECTIVOS_MES || 0), 0);
+        const porTranscurrir = Math.max(efectivos - transcurridos, 0);
+        return `<div class="hierarchy-days-grid" aria-label="Calendario operativo del mes">
+            <div class="hierarchy-day-card hierarchy-day-elapsed"><small>Días transcurridos</small><b>${formatOperationalDays(transcurridos)}</b></div>
+            <div class="hierarchy-day-card hierarchy-day-effective"><small>Días efectivos del mes</small><b>${formatOperationalDays(efectivos)}</b></div>
+            <div class="hierarchy-day-card hierarchy-day-remaining"><small>Días por transcurrir</small><b>${formatOperationalDays(porTranscurrir)}</b></div>
+        </div>`;
+    }
+
     const marcasPropias = ["STAR", "BRESSER", "BRESSER LKW", "DYNAMIC", "TECNOFUEL", "VALUE", "ACOSA", "REWARD", "WEISCHLER", "CARFAN", "VERZE", "JULS CARMAN", "REIDEN"];
     
     function normalizeBrandName(value) { return String(value || "").trim().toUpperCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
@@ -1255,7 +1356,7 @@ header>div.max-w-7xl{max-width:1600px!important;width:100%!important;display:gri
             const proy=DIAS_TRANSCURRIDOS>0?(node.totalVenta/DIAS_TRANSCURRIDOS)*DIAS_EFECTIVOS_MES:0;
             const pct=node.totalCuota>0?proy/node.totalCuota*100:0;
             const div=document.createElement('div');div.className='advisor-card-btn border rounded-2xl p-6 flex flex-col justify-between';div.onclick=()=>openTerritorialRegions(node.name);
-            div.innerHTML=`<div class="flex justify-between items-start mb-5"><div><div class="text-[9px] text-slate-400 font-bold uppercase mb-1">Gerente Territorial</div><div class="text-xl font-black text-white uppercase break-words">${node.name}</div><div class="text-[8px] text-neon-cyan font-bold mt-1">${node.regiones.length} REGIÓN(ES)</div></div><div class="traffic-light ${getSemaforoProyeccionClass(pct)}"></div></div><div class="grid grid-cols-2 gap-3"><div><small class="text-slate-400 font-bold">VENTA MES</small><b class="block text-white">${fmt.format(node.totalVenta)}</b></div><div><small class="text-slate-400 font-bold">CUOTA MES</small><b class="block text-white">${fmt.format(node.totalCuota)}</b></div></div><div class="border-t mt-4 pt-4 flex justify-between"><span class="text-[9px] text-slate-400 font-bold">PROYECCIÓN</span><b class="${getSemaforoProyeccionTextClass(pct)}">${pct.toFixed(1)}%</b></div>`;
+            div.innerHTML=`<div class="flex justify-between items-start mb-5"><div><div class="text-[9px] text-slate-400 font-bold uppercase mb-1">Gerente Territorial</div><div class="text-xl font-black text-white uppercase break-words">${node.name}</div><div class="text-[8px] text-neon-cyan font-bold mt-1">${node.regiones.length} REGIÓN(ES)</div></div><div class="traffic-light ${getSemaforoProyeccionClass(pct)}"></div></div><div class="grid grid-cols-2 gap-3"><div><small class="text-slate-400 font-bold">VENTA MES</small><b class="block text-white">${fmt.format(node.totalVenta)}</b></div><div><small class="text-slate-400 font-bold">CUOTA MES</small><b class="block text-white">${fmt.format(node.totalCuota)}</b></div></div><div class="border-t mt-4 pt-4 flex justify-between"><span class="text-[9px] text-slate-400 font-bold">PROYECCIÓN</span><b class="${getSemaforoProyeccionTextClass(pct)}">${pct.toFixed(1)}%</b></div>${hierarchyDaysCards()}`;
             container.appendChild(div);
         });
         appCurrentState='PANEL_TERRITORIALES';
@@ -1286,7 +1387,7 @@ header>div.max-w-7xl{max-width:1600px!important;width:100%!important;display:gri
                     <div><div class="text-[8px] text-slate-400 font-bold uppercase">Venta Neta Mes</div><div class="text-[13px] font-black text-white">${fmt.format(reg.totalVenta)}</div></div>
                     <div><div class="text-[8px] text-slate-400 font-bold uppercase">Meta Acumulada</div><div class="text-[13px] font-black text-white">${fmt.format(reg.totalCuota)}</div></div>
                 </div>
-                <div class="border-t border-white/10 pt-4 flex justify-between items-center"><div class="text-[9px] text-slate-400 font-bold uppercase">Proyección de Cierre</div><div class="text-lg font-black ${getSemaforoProyeccionTextClass(porcentaje)}">${porcentaje.toFixed(1)}%</div></div>`;
+                <div class="border-t border-white/10 pt-4 flex justify-between items-center"><div class="text-[9px] text-slate-400 font-bold uppercase">Proyección de Cierre</div><div class="text-lg font-black ${getSemaforoProyeccionTextClass(porcentaje)}">${porcentaje.toFixed(1)}%</div></div>${hierarchyDaysCards()}`;
             container.appendChild(div);
         });
     }
@@ -1314,7 +1415,7 @@ header>div.max-w-7xl{max-width:1600px!important;width:100%!important;display:gri
                     <div><div class="text-[8px] text-slate-400 font-bold uppercase">Venta</div><div class="text-[13px] font-black text-white">${fmt.format(adv.totalVenta)}</div></div>
                     <div><div class="text-[8px] text-slate-400 font-bold uppercase">Objetivo</div><div class="text-[13px] font-black text-white">${fmt.format(adv.totalCuota)}</div></div>
                 </div>
-                <div class="border-t border-white/10 pt-4 flex justify-between items-center"><div class="text-[9px] text-slate-400 font-bold uppercase">Proyección</div><div class="text-lg font-black ${getSemaforoProyeccionTextClass(porcentaje)}">${porcentaje.toFixed(1)}%</div></div>`;
+                <div class="border-t border-white/10 pt-4 flex justify-between items-center"><div class="text-[9px] text-slate-400 font-bold uppercase">Proyección</div><div class="text-lg font-black ${getSemaforoProyeccionTextClass(porcentaje)}">${porcentaje.toFixed(1)}%</div></div>${hierarchyDaysCards()}`;
             container.appendChild(div);
         });
     }
@@ -1344,6 +1445,7 @@ header>div.max-w-7xl{max-width:1600px!important;width:100%!important;display:gri
                         <div><span class="text-[8px] text-slate-400 font-bold block uppercase">Objetivo Mn</span><span class="text-sm font-black text-white">${fmt.format(client.cuota)}</span></div>
                         <div><span class="text-[8px] text-slate-400 font-bold block uppercase">Proyección</span><span class="text-sm font-black text-neon-cyan">${fmt.format(proyeccion)}</span></div>
                     </div>
+                    ${hierarchyDaysCards()}
                 </div>
                 <div class="flex items-center gap-5 flex-shrink-0 w-full md:w-auto justify-between md:justify-end">
                     <div class="text-right"><span class="text-[9px] text-slate-400 font-bold block uppercase">Proyección</span><span class="text-2xl font-black text-white">${porcentaje.toFixed(1)}%</span></div>
